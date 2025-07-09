@@ -36,6 +36,11 @@ void sp_app()
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 
+
+
+    // //FOC硬件基本测试
+    // foc_hd_test();
+
     //FOC初始化
     foc_init();
 
@@ -44,12 +49,81 @@ void sp_app()
     //设置角度为180度
     foc_set_ang(180);
 
+
+
+    // float ang=0;
+    // float step=40;
+    // while(1)
+    // {
+    //     foc_set_ang(ang);
+    //     ang+=step;
+    //     if(ang>=360)
+    //     {
+    //         ang=0;
+    //     }
+    //     // printf("speed/step:%f,%f\n",foc_read_spd(),step);
+    //     vTaskDelay(pdMS_TO_TICKS(50));
+    // }
+
+
+
+
     // //设置为定速度模式
     // foc_set_mode(FOC_MODE_SPD);
-    // //设置速度为100转每分钟
+    // //设置速度为10转每分钟
+    // foc_set_spd(10);
+    // foc_set_spd(200);
+    // foc_set_spd(400);
     // foc_set_spd(100);
 
+
+    // float spd=0;
+    // while(1)
+    // {
+    //     spd+=0.05;
+    //     if(spd>1000)
+    //     {
+    //         spd=1000;
+    //     }
+    //     foc_set_spd(spd);
+    //     printf("relspd/tgspd:%f,%f\n",foc_read_spd(),spd);
+    //     vTaskDelay(pdMS_TO_TICKS(10));
+    // }
+
+    while(1)
+    {
+        printf("relspd:%f\n",foc_read_spd());
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+
+
+    // printf("ang=%f\n",foc_read_ang());
+
 }
+
+
+
+
+    // float ang=0;
+    // float step=1;
+    // while(1)
+    // {
+    //     foc_set_ang(ang);
+    //     ang+=step;
+    //     if(ang>=360)
+    //     {
+    //         ang=0;
+    //     }
+    //     step+=0.01;
+    //     if(step>100)
+    //     {
+    //         step=100;
+    //     }
+    //     // printf("speed/range:%f,%f\n",foc_read_spd(),range);
+    //     printf("speed/step:%f,%f\n",foc_read_spd(),step);
+    //     vTaskDelay(pdMS_TO_TICKS(10));
+    // }
+
 
 //测试
 // foc_test();

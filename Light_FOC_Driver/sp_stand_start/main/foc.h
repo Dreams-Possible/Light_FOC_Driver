@@ -10,6 +10,8 @@
 #define FOC_MODE_ANG 0
 #define FOC_MODE_SPD 1
 
+//FOC硬件基本测试
+void foc_hd_test();
 //FOC初始化
 void foc_init();
 //FOC设置模式
