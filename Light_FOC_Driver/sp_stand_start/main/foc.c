@@ -258,6 +258,10 @@ static void foc_service(void*arg)
                 {
                     ang_p+=360;
                 }
+                if(ang_p>180)
+                {
+                    ang_p-=360;
+                }
                 // LOG_PRT("ang_p=%f\n",ang_p);
                 // LOG_PRT("ang:%f\n",angle_real());
                 //累计误差
